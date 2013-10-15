@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+ 
 	<head>
     <base href="<%=basePath%>">
     
@@ -13,16 +14,16 @@
 	<meta http-equiv="description" content="Events Around U">
 	<link rel="stylesheet" type="text/css" href="master.css">
   </head>
-	<body> 
+	<body background="3f2b869dbd9aa9634bd529614ae074cb.png"> 
 	<div class="banner">
   		<label>Malicious App Analyzer</label>
   	</div>
 	
-	<div class="UploadTable">
+
 	<form ENCTYPE="multipart/form-data" ACTION="upload.jsp" METHOD=POST>
 	<br><br><br>
 
-	<table border="0" bgcolor=#ccFDDEE>
+	<table border="2">
 	<tr>
 		<td colspan="2" align="center"><B>UPLOAD THE FILE</B></td>
 	</tr>
@@ -41,7 +42,6 @@
 	</tr>
 	</table>
 </form>
-</div>
 </body>
 </html>
 	
