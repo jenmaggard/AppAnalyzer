@@ -13,10 +13,6 @@ import java.io.StringReader;
 public class CFGGenerator implements GraphGenerator{
 	
 	private String bytecodeFilePath;
-	
-	public CFGGenerator(String fp){
-		this.bytecodeFilePath = fp;
-	}
 
 	public String getBytecodeFilePath() {
 		return bytecodeFilePath;
@@ -251,5 +247,18 @@ public class CFGGenerator implements GraphGenerator{
 		}
 		
 		return instruction;
+	}
+	
+	
+	/**
+	 * DRIVER TO DEBUG CODE
+	 */
+	
+	public static void main(String[] args){
+		
+		CFGGenerator cfgGen = new CFGGenerator();
+		cfgGen.setFP("C:\\Users\\Faisal\\workspace\\blah\\src\\blah\\TestMalicious.txt");
+		
+		CFG cfg = (CFG) cfgGen.generate();
 	}
 }
