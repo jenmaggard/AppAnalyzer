@@ -10,13 +10,14 @@ public class Method implements GraphComponent {
 	
 	private String packageAndClass;
 	private String name;
-	private String[] paramsTypes;
+	private ArrayList<String> paramsTypes;
 	private String returnType;
 	private ArrayList<GraphComponent> basicblocks;
 	
 	
 	public Method(){
 		basicblocks = new ArrayList<GraphComponent>();
+		paramsTypes = new ArrayList<String>();
 	}
 
 	public String getPackageAndClass() {
@@ -39,13 +40,12 @@ public class Method implements GraphComponent {
 	}
 
 
-	public String[] getParamsTypes() {
+	public ArrayList<String> getParamsTypes() {
 		return paramsTypes;
 	}
-
-
-	public void setParamsTypes(String[] paramsTypes) {
-		this.paramsTypes = paramsTypes;
+	
+	public void addParamType(String pt){
+		paramsTypes.add(pt);
 	}
 
 
@@ -56,6 +56,10 @@ public class Method implements GraphComponent {
 
 	public void setReturnType(String returnType) {
 		this.returnType = returnType;
+	}
+	
+	public ArrayList<GraphComponent> getBasicBlocks(){
+		return basicblocks;
 	}
 
 	@Override
@@ -68,6 +72,12 @@ public class Method implements GraphComponent {
 	public void removeComponent(GraphComponent e) {
 		
 		basicblocks.remove(e);
+	}
+
+	@Override
+	public void process() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
