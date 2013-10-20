@@ -18,7 +18,7 @@ public class AnalysisController {
 	}
 	
 	public ScanResult scan(){
-		decompiler.setFP(apkFilePath);
+		decompiler.setFilePath(apkFilePath);
 		String bcfp = decompiler.decompile();
 		
 		graphGenerator.setFP(bcfp);

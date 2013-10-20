@@ -1,10 +1,11 @@
 /**
  * Decompiler interface
  * @author Faisal
- *
+ * 
+ * Fixed by Mengferi
  */
-public interface Decompiler {
-	
-	public String decompile();
-	public void setFP(String fp);
+public abstract class Decompiler {
+	public abstract String decompile();
+	public abstract void setFilePath(String fp);
+	public abstract String getAppName();
 }

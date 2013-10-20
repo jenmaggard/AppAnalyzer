@@ -1,0 +1,14 @@
+#!/bin/bash
+for file in /home/mohsin/Downloads/sampleAPKFiles/*
+do
+   echo "file name $file..."
+   fileName=${file##*/}
+   dirName=`basename $fileName`
+   echo $dirName
+   dirPath="/home/mohsin/Downloads/sampleAPKFiles"
+   outputFile="$dirPath/$fileName.txt"
+   txt="python /home/mohsin/Downloads/androguard/cfgAndroFile.py -i $file -o $outputFile"
+   $txt
+done
+
+

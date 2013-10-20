@@ -1,0 +1,1098 @@
+Lcom/example/android/snake/R$attr; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/R$drawable; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/R$id; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/R$layout; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/R$string; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/R$styleable; <clinit> ()V
+	<clinit>-BB@0x0 0x0 0x16[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v0, 1
+		0x2 new-array v0, v0, [I
+		0x6 const/4 v1, 0
+		0x8 const/high16 v2, 32513 # [1.7147041145625415e+38]
+		0xc aput v2, v0, v1
+		0x10 sput-object v0, Lcom/example/android/snake/R$styleable;->TileView [I
+		0x14 return-void 
+Lcom/example/android/snake/R$styleable; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/R; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/Snake; <clinit> ()V
+	<clinit>-BB@0x0 0x0 0xa[ NEXT =  ] [ PREV = ] 
+		0x0 const-string v0, 'snake-view'
+		0x4 sput-object v0, Lcom/example/android/snake/Snake;->ICICLE_KEY Ljava/lang/String;
+		0x8 return-void 
+Lcom/example/android/snake/Snake; <init> ()V
+	<init>-BB@0x0 0x0 0x8[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v0, Landroid/app/Activity;-><init>()V
+		0x6 return-void 
+Lcom/example/android/snake/Snake; onCreate (Landroid/os/Bundle;)V
+	onCreate-BB@0x0 0x0 0x44[ NEXT = 0x40-0x44-onCreate-BB@0x44 0x40-0x52-onCreate-BB@0x52  ] [ PREV = ] 
+		0x0 invoke-super v3, v4, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+		0x6 const/high16 v1, 32515 # [1.7412886744782398e+38]
+		0xa invoke-virtual v3, v1, Lcom/example/android/snake/Snake;->setContentView(I)V
+		0x10 const/high16 v1, 32517 # [1.767873234393938e+38]
+		0x14 invoke-virtual v3, v1, Lcom/example/android/snake/Snake;->findViewById(I)Landroid/view/View;
+		0x1a move-result-object v0
+		0x1c check-cast v0, Lcom/example/android/snake/SnakeView;
+		0x20 iput-object v0, v3, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0x24 iget-object v1, v3, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0x28 const v2, 2131034113 # [1.767873437218034e+38]
+		0x2e invoke-virtual v3, v2, Lcom/example/android/snake/Snake;->findViewById(I)Landroid/view/View;
+		0x34 move-result-object v0
+		0x36 check-cast v0, Landroid/widget/TextView;
+		0x3a invoke-virtual v1, v0, Lcom/example/android/snake/SnakeView;->setTextView(Landroid/widget/TextView;)V
+		0x40 if-nez v4, +9
+	onCreate-BB@0x44 0x44 0x50[ NEXT = 0x4a-0x50-onCreate-BB@0x50  ] [ PREV = onCreate-BB@0x0] 
+		0x44 iget-object v1, v3, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0x48 const/4 v2, 1
+		0x4a invoke-virtual v1, v2, Lcom/example/android/snake/SnakeView;->setMode(I)V
+	onCreate-BB@0x50 0x50 0x52[ NEXT =  ] [ PREV = onCreate-BB@0x44, onCreate-BB@0x62, onCreate-BB@0x6e] 
+		0x50 return-void 
+	onCreate-BB@0x52 0x52 0x62[ NEXT = 0x5e-0x62-onCreate-BB@0x62 0x5e-0x6e-onCreate-BB@0x6e  ] [ PREV = onCreate-BB@0x0] 
+		0x52 sget-object v1, Lcom/example/android/snake/Snake;->ICICLE_KEY Ljava/lang/String;
+		0x56 invoke-virtual v4, v1, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+		0x5c move-result-object v0
+		0x5e if-eqz v0, +8
+	onCreate-BB@0x62 0x62 0x6e[ NEXT = 0x6c-0x50-onCreate-BB@0x50  ] [ PREV = onCreate-BB@0x52] 
+		0x62 iget-object v1, v3, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0x66 invoke-virtual v1, v0, Lcom/example/android/snake/SnakeView;->restoreState(Landroid/os/Bundle;)V
+		0x6c goto -e
+	onCreate-BB@0x6e 0x6e 0x7c[ NEXT = 0x7a-0x50-onCreate-BB@0x50  ] [ PREV = onCreate-BB@0x52] 
+		0x6e iget-object v1, v3, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0x72 const/4 v2, 0
+		0x74 invoke-virtual v1, v2, Lcom/example/android/snake/SnakeView;->setMode(I)V
+		0x7a goto -15
+Lcom/example/android/snake/Snake; onPause ()V
+	onPause-BB@0x0 0x0 0x14[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-super v2, Landroid/app/Activity;->onPause()V
+		0x6 iget-object v0, v2, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0xa const/4 v1, 0
+		0xc invoke-virtual v0, v1, Lcom/example/android/snake/SnakeView;->setMode(I)V
+		0x12 return-void 
+Lcom/example/android/snake/Snake; onSaveInstanceState (Landroid/os/Bundle;)V
+	onSaveInstanceState-BB@0x0 0x0 0x18[ NEXT =  ] [ PREV = ] 
+		0x0 sget-object v0, Lcom/example/android/snake/Snake;->ICICLE_KEY Ljava/lang/String;
+		0x4 iget-object v1, v2, Lcom/example/android/snake/Snake;->mSnakeView Lcom/example/android/snake/SnakeView;
+		0x8 invoke-virtual v1, Lcom/example/android/snake/SnakeView;->saveState()Landroid/os/Bundle;
+		0xe move-result-object v1
+		0x10 invoke-virtual v3, v0, v1, Landroid/os/Bundle;->putBundle(Ljava/lang/String; Landroid/os/Bundle;)V
+		0x16 return-void 
+Lcom/example/android/snake/SnakeView$Coordinate; <init> (Lcom/example/android/snake/SnakeView; I I)V
+	<init>-BB@0x0 0x0 0x14[ NEXT =  ] [ PREV = ] 
+		0x0 iput-object v1, v0, Lcom/example/android/snake/SnakeView$Coordinate;->this$0 Lcom/example/android/snake/SnakeView;
+		0x4 invoke-direct v0, Ljava/lang/Object;-><init>()V
+		0xa iput v2, v0, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0xe iput v3, v0, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x12 return-void 
+Lcom/example/android/snake/SnakeView$Coordinate; equals (Lcom/example/android/snake/SnakeView$Coordinate;)Z
+	equals-BB@0x0 0x0 0xc[ NEXT = 0x8-0xc-equals-BB@0xc 0x8-0x1c-equals-BB@0x1c  ] [ PREV = ] 
+		0x0 iget v0, v2, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x4 iget v1, v3, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x8 if-ne v0, v1, +a
+	equals-BB@0xc 0xc 0x18[ NEXT = 0x14-0x18-equals-BB@0x18 0x14-0x1c-equals-BB@0x1c  ] [ PREV = equals-BB@0x0] 
+		0xc iget v0, v2, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x10 iget v1, v3, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x14 if-ne v0, v1, +4
+	equals-BB@0x18 0x18 0x1a[ NEXT = 0x18-0x1a-equals-BB@0x1a  ] [ PREV = equals-BB@0xc] 
+		0x18 const/4 v0, 1
+	equals-BB@0x1a 0x1a 0x1c[ NEXT =  ] [ PREV = equals-BB@0x18, equals-BB@0x1c] 
+		0x1a return v0
+	equals-BB@0x1c 0x1c 0x20[ NEXT = 0x1e-0x1a-equals-BB@0x1a  ] [ PREV = equals-BB@0x0, equals-BB@0xc] 
+		0x1c const/4 v0, 0
+		0x1e goto -2
+Lcom/example/android/snake/SnakeView$Coordinate; toString ()Ljava/lang/String;
+	toString-BB@0x0 0x0 0x50[ NEXT =  ] [ PREV = ] 
+		0x0 new-instance v0, Ljava/lang/StringBuilder;
+		0x4 invoke-direct v0, Ljava/lang/StringBuilder;-><init>()V
+		0xa const-string v1, 'Coordinate: ['
+		0xe invoke-virtual v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x14 move-result-object v0
+		0x16 iget v1, v2, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x1a invoke-virtual v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0x20 move-result-object v0
+		0x22 const-string v1, ','
+		0x26 invoke-virtual v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x2c move-result-object v0
+		0x2e iget v1, v2, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x32 invoke-virtual v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0x38 move-result-object v0
+		0x3a const-string v1, ']'
+		0x3e invoke-virtual v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x44 move-result-object v0
+		0x46 invoke-virtual v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+		0x4c move-result-object v0
+		0x4e return-object v0
+Lcom/example/android/snake/SnakeView$RefreshHandler; <init> (Lcom/example/android/snake/SnakeView;)V
+	<init>-BB@0x0 0x0 0xc[ NEXT =  ] [ PREV = ] 
+		0x0 iput-object v1, v0, Lcom/example/android/snake/SnakeView$RefreshHandler;->this$0 Lcom/example/android/snake/SnakeView;
+		0x4 invoke-direct v0, Landroid/os/Handler;-><init>()V
+		0xa return-void 
+Lcom/example/android/snake/SnakeView$RefreshHandler; handleMessage (Landroid/os/Message;)V
+	handleMessage-BB@0x0 0x0 0x16[ NEXT =  ] [ PREV = ] 
+		0x0 iget-object v0, v1, Lcom/example/android/snake/SnakeView$RefreshHandler;->this$0 Lcom/example/android/snake/SnakeView;
+		0x4 invoke-virtual v0, Lcom/example/android/snake/SnakeView;->update()V
+		0xa iget-object v0, v1, Lcom/example/android/snake/SnakeView$RefreshHandler;->this$0 Lcom/example/android/snake/SnakeView;
+		0xe invoke-virtual v0, Lcom/example/android/snake/SnakeView;->invalidate()V
+		0x14 return-void 
+Lcom/example/android/snake/SnakeView$RefreshHandler; sleep (J)V
+	sleep-BB@0x0 0x0 0x18[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v0, 0
+		0x2 invoke-virtual v1, v0, Lcom/example/android/snake/SnakeView$RefreshHandler;->removeMessages(I)V
+		0x8 invoke-virtual v1, v0, Lcom/example/android/snake/SnakeView$RefreshHandler;->obtainMessage(I)Landroid/os/Message;
+		0xe move-result-object v0
+		0x10 invoke-virtual v1, v0, v2, v3, Lcom/example/android/snake/SnakeView$RefreshHandler;->sendMessageDelayed(Landroid/os/Message; J)Z
+		0x16 return-void 
+Lcom/example/android/snake/TileView; <init> (Landroid/content/Context; Landroid/util/AttributeSet;)V
+	<init>-BB@0x0 0x0 0x3a[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v3, v4, v5, Landroid/view/View;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+		0x6 new-instance v1, Landroid/graphics/Paint;
+		0xa invoke-direct v1, Landroid/graphics/Paint;-><init>()V
+		0x10 iput-object v1, v3, Lcom/example/android/snake/TileView;->mPaint Landroid/graphics/Paint;
+		0x14 sget-object v1, Lcom/example/android/snake/R$styleable;->TileView [I
+		0x18 invoke-virtual v4, v5, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+		0x1e move-result-object v0
+		0x20 const/4 v1, 0
+		0x22 const/16 v2, 12
+		0x26 invoke-virtual v0, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+		0x2c move-result v1
+		0x2e sput v1, Lcom/example/android/snake/TileView;->mTileSize I
+		0x32 invoke-virtual v0, Landroid/content/res/TypedArray;->recycle()V
+		0x38 return-void 
+Lcom/example/android/snake/TileView; <init> (Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	<init>-BB@0x0 0x0 0x3a[ NEXT =  ] [ PREV = ] 
+		0x0 invoke-direct v3, v4, v5, v6, Landroid/view/View;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+		0x6 new-instance v1, Landroid/graphics/Paint;
+		0xa invoke-direct v1, Landroid/graphics/Paint;-><init>()V
+		0x10 iput-object v1, v3, Lcom/example/android/snake/TileView;->mPaint Landroid/graphics/Paint;
+		0x14 sget-object v1, Lcom/example/android/snake/R$styleable;->TileView [I
+		0x18 invoke-virtual v4, v5, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+		0x1e move-result-object v0
+		0x20 const/4 v1, 0
+		0x22 const/16 v2, 12
+		0x26 invoke-virtual v0, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+		0x2c move-result v1
+		0x2e sput v1, Lcom/example/android/snake/TileView;->mTileSize I
+		0x32 invoke-virtual v0, Landroid/content/res/TypedArray;->recycle()V
+		0x38 return-void 
+Lcom/example/android/snake/TileView; clearTiles ()V
+	clearTiles-BB@0x0 0x0 0x2[ NEXT = 0x0-0x2-clearTiles-BB@0x2  ] [ PREV = ] 
+		0x0 const/4 v0, 0
+	clearTiles-BB@0x2 0x2 0xa[ NEXT = 0x6-0xa-clearTiles-BB@0xa 0x6-0x28-clearTiles-BB@0x28  ] [ PREV = clearTiles-BB@0x0, clearTiles-BB@0x22] 
+		0x2 sget v2, Lcom/example/android/snake/TileView;->mXTileCount I
+		0x6 if-ge v0, v2, +11
+	clearTiles-BB@0xa 0xa 0xc[ NEXT = 0xa-0xc-clearTiles-BB@0xc  ] [ PREV = clearTiles-BB@0x2] 
+		0xa const/4 v1, 0
+	clearTiles-BB@0xc 0xc 0x14[ NEXT = 0x10-0x14-clearTiles-BB@0x14 0x10-0x22-clearTiles-BB@0x22  ] [ PREV = clearTiles-BB@0xa, clearTiles-BB@0x14] 
+		0xc sget v2, Lcom/example/android/snake/TileView;->mYTileCount I
+		0x10 if-ge v1, v2, +9
+	clearTiles-BB@0x14 0x14 0x22[ NEXT = 0x20-0xc-clearTiles-BB@0xc  ] [ PREV = clearTiles-BB@0xc] 
+		0x14 const/4 v2, 0
+		0x16 invoke-virtual v3, v2, v0, v1, Lcom/example/android/snake/TileView;->setTile(I I I)V
+		0x1c add-int/lit8 v1, v1, 1
+		0x20 goto -a
+	clearTiles-BB@0x22 0x22 0x28[ NEXT = 0x26-0x2-clearTiles-BB@0x2  ] [ PREV = clearTiles-BB@0xc] 
+		0x22 add-int/lit8 v0, v0, 1
+		0x26 goto -12
+	clearTiles-BB@0x28 0x28 0x2a[ NEXT =  ] [ PREV = clearTiles-BB@0x2] 
+		0x28 return-void 
+Lcom/example/android/snake/TileView; loadTile (I Landroid/graphics/drawable/Drawable;)V
+	loadTile-BB@0x0 0x0 0x3e[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v5, 0
+		0x2 sget v2, Lcom/example/android/snake/TileView;->mTileSize I
+		0x6 sget v3, Lcom/example/android/snake/TileView;->mTileSize I
+		0xa sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888 Landroid/graphics/Bitmap$Config;
+		0xe invoke-static v2, v3, v4, Landroid/graphics/Bitmap;->createBitmap(I I Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+		0x14 move-result-object v0
+		0x16 new-instance v1, Landroid/graphics/Canvas;
+		0x1a invoke-direct v1, v0, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+		0x20 sget v2, Lcom/example/android/snake/TileView;->mTileSize I
+		0x24 sget v3, Lcom/example/android/snake/TileView;->mTileSize I
+		0x28 invoke-virtual v8, v5, v5, v2, v3, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+		0x2e invoke-virtual v8, v1, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+		0x34 iget-object v2, v6, Lcom/example/android/snake/TileView;->mTileArray [Landroid/graphics/Bitmap;
+		0x38 aput-object v0, v2, v7
+		0x3c return-void 
+Lcom/example/android/snake/TileView; onDraw (Landroid/graphics/Canvas;)V
+	onDraw-BB@0x0 0x0 0x8[ NEXT = 0x6-0x8-onDraw-BB@0x8  ] [ PREV = ] 
+		0x0 invoke-super v6, v7, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+		0x6 const/4 v0, 0
+	onDraw-BB@0x8 0x8 0x10[ NEXT = 0xc-0x10-onDraw-BB@0x10 0xc-0x70-onDraw-BB@0x70  ] [ PREV = onDraw-BB@0x0, onDraw-BB@0x6a] 
+		0x8 sget v2, Lcom/example/android/snake/TileView;->mXTileCount I
+		0xc if-ge v0, v2, +32
+	onDraw-BB@0x10 0x10 0x12[ NEXT = 0x10-0x12-onDraw-BB@0x12  ] [ PREV = onDraw-BB@0x8] 
+		0x10 const/4 v1, 0
+	onDraw-BB@0x12 0x12 0x1a[ NEXT = 0x16-0x1a-onDraw-BB@0x1a 0x16-0x6a-onDraw-BB@0x6a  ] [ PREV = onDraw-BB@0x10, onDraw-BB@0x64] 
+		0x12 sget v2, Lcom/example/android/snake/TileView;->mYTileCount I
+		0x16 if-ge v1, v2, +2a
+	onDraw-BB@0x1a 0x1a 0x2a[ NEXT = 0x26-0x2a-onDraw-BB@0x2a 0x26-0x64-onDraw-BB@0x64  ] [ PREV = onDraw-BB@0x12] 
+		0x1a iget-object v2, v6, Lcom/example/android/snake/TileView;->mTileGrid [[I
+		0x1e aget-object v2, v2, v0
+		0x22 aget v2, v2, v1
+		0x26 if-lez v2, +1f
+	onDraw-BB@0x2a 0x2a 0x64[ NEXT = 0x5e-0x64-onDraw-BB@0x64  ] [ PREV = onDraw-BB@0x1a] 
+		0x2a iget-object v2, v6, Lcom/example/android/snake/TileView;->mTileArray [Landroid/graphics/Bitmap;
+		0x2e iget-object v3, v6, Lcom/example/android/snake/TileView;->mTileGrid [[I
+		0x32 aget-object v3, v3, v0
+		0x36 aget v3, v3, v1
+		0x3a aget-object v2, v2, v3
+		0x3e sget v3, Lcom/example/android/snake/TileView;->mXOffset I
+		0x42 sget v4, Lcom/example/android/snake/TileView;->mTileSize I
+		0x46 mul-int/2addr v4, v0
+		0x48 add-int/2addr v3, v4
+		0x4a int-to-float v3, v3
+		0x4c sget v4, Lcom/example/android/snake/TileView;->mYOffset I
+		0x50 sget v5, Lcom/example/android/snake/TileView;->mTileSize I
+		0x54 mul-int/2addr v5, v1
+		0x56 add-int/2addr v4, v5
+		0x58 int-to-float v4, v4
+		0x5a iget-object v5, v6, Lcom/example/android/snake/TileView;->mPaint Landroid/graphics/Paint;
+		0x5e invoke-virtual v7, v2, v3, v4, v5, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap; F F Landroid/graphics/Paint;)V
+	onDraw-BB@0x64 0x64 0x6a[ NEXT = 0x68-0x12-onDraw-BB@0x12  ] [ PREV = onDraw-BB@0x1a, onDraw-BB@0x2a] 
+		0x64 add-int/lit8 v1, v1, 1
+		0x68 goto -2b
+	onDraw-BB@0x6a 0x6a 0x70[ NEXT = 0x6e-0x8-onDraw-BB@0x8  ] [ PREV = onDraw-BB@0x12] 
+		0x6a add-int/lit8 v0, v0, 1
+		0x6e goto -33
+	onDraw-BB@0x70 0x70 0x72[ NEXT =  ] [ PREV = onDraw-BB@0x8] 
+		0x70 return-void 
+Lcom/example/android/snake/TileView; onSizeChanged (I I I I)V
+	onSizeChanged-BB@0x0 0x0 0x88[ NEXT =  ] [ PREV = ] 
+		0x0 sget v0, Lcom/example/android/snake/TileView;->mTileSize I
+		0x4 div-int v0, v3, v0
+		0x8 int-to-double v0, v0
+		0xa invoke-static v0, v1, Ljava/lang/Math;->floor(D)D
+		0x10 move-result-wide v0
+		0x12 double-to-int v0, v0
+		0x14 sput v0, Lcom/example/android/snake/TileView;->mXTileCount I
+		0x18 sget v0, Lcom/example/android/snake/TileView;->mTileSize I
+		0x1c div-int v0, v4, v0
+		0x20 int-to-double v0, v0
+		0x22 invoke-static v0, v1, Ljava/lang/Math;->floor(D)D
+		0x28 move-result-wide v0
+		0x2a double-to-int v0, v0
+		0x2c sput v0, Lcom/example/android/snake/TileView;->mYTileCount I
+		0x30 sget v0, Lcom/example/android/snake/TileView;->mTileSize I
+		0x34 sget v1, Lcom/example/android/snake/TileView;->mXTileCount I
+		0x38 mul-int/2addr v0, v1
+		0x3a sub-int v0, v3, v0
+		0x3e div-int/lit8 v0, v0, 2
+		0x42 sput v0, Lcom/example/android/snake/TileView;->mXOffset I
+		0x46 sget v0, Lcom/example/android/snake/TileView;->mTileSize I
+		0x4a sget v1, Lcom/example/android/snake/TileView;->mYTileCount I
+		0x4e mul-int/2addr v0, v1
+		0x50 sub-int v0, v4, v0
+		0x54 div-int/lit8 v0, v0, 2
+		0x58 sput v0, Lcom/example/android/snake/TileView;->mYOffset I
+		0x5c sget v0, Lcom/example/android/snake/TileView;->mXTileCount I
+		0x60 sget v1, Lcom/example/android/snake/TileView;->mYTileCount I
+		0x64 filled-new-array v0, v1, [I
+		0x6a move-result-object v0
+		0x6c sget-object v1, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+		0x70 invoke-static v1, v0, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class; [I)Ljava/lang/Object;
+		0x76 move-result-object v0
+		0x78 check-cast v0, [[I
+		0x7c iput-object v0, v2, Lcom/example/android/snake/TileView;->mTileGrid [[I
+		0x80 invoke-virtual v2, Lcom/example/android/snake/TileView;->clearTiles()V
+		0x86 return-void 
+Lcom/example/android/snake/TileView; resetTiles (I)V
+	resetTiles-BB@0x0 0x0 0xa[ NEXT =  ] [ PREV = ] 
+		0x0 new-array v0, v2, [Landroid/graphics/Bitmap;
+		0x4 iput-object v0, v1, Lcom/example/android/snake/TileView;->mTileArray [Landroid/graphics/Bitmap;
+		0x8 return-void 
+Lcom/example/android/snake/TileView; setTile (I I I)V
+	setTile-BB@0x0 0x0 0xe[ NEXT =  ] [ PREV = ] 
+		0x0 iget-object v0, v1, Lcom/example/android/snake/TileView;->mTileGrid [[I
+		0x4 aget-object v0, v0, v3
+		0x8 aput v2, v0, v4
+		0xc return-void 
+Lcom/example/android/snake/SnakeView; <clinit> ()V
+	<clinit>-BB@0x0 0x0 0x10[ NEXT =  ] [ PREV = ] 
+		0x0 new-instance v0, Ljava/util/Random;
+		0x4 invoke-direct v0, Ljava/util/Random;-><init>()V
+		0xa sput-object v0, Lcom/example/android/snake/SnakeView;->RNG Ljava/util/Random;
+		0xe return-void 
+Lcom/example/android/snake/SnakeView; <init> (Landroid/content/Context; Landroid/util/AttributeSet;)V
+	<init>-BB@0x0 0x0 0x76[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v1, 1
+		0x2 invoke-direct v2, v3, v4, Lcom/example/android/snake/TileView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+		0x8 const/16 v0, 33
+		0xc iput v0, v2, Lcom/example/android/snake/SnakeView;->key_up I
+		0x10 const/16 v0, 52
+		0x14 iput v0, v2, Lcom/example/android/snake/SnakeView;->key_down I
+		0x18 const/16 v0, 32
+		0x1c iput v0, v2, Lcom/example/android/snake/SnakeView;->key_right I
+		0x20 const/16 v0, 47
+		0x24 iput v0, v2, Lcom/example/android/snake/SnakeView;->key_left I
+		0x28 iput v1, v2, Lcom/example/android/snake/SnakeView;->mMode I
+		0x2c iput v1, v2, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x30 iput v1, v2, Lcom/example/android/snake/SnakeView;->mNextDirection I
+		0x34 const-wide/16 v0, 0 # [0.0]
+		0x38 iput-wide v0, v2, Lcom/example/android/snake/SnakeView;->mScore J
+		0x3c const-wide/16 v0, 600 # [600.0]
+		0x40 iput-wide v0, v2, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x44 new-instance v0, Ljava/util/ArrayList;
+		0x48 invoke-direct v0, Ljava/util/ArrayList;-><init>()V
+		0x4e iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x52 new-instance v0, Ljava/util/ArrayList;
+		0x56 invoke-direct v0, Ljava/util/ArrayList;-><init>()V
+		0x5c iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x60 new-instance v0, Lcom/example/android/snake/SnakeView$RefreshHandler;
+		0x64 invoke-direct v0, v2, Lcom/example/android/snake/SnakeView$RefreshHandler;-><init>(Lcom/example/android/snake/SnakeView;)V
+		0x6a iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mRedrawHandler Lcom/example/android/snake/SnakeView$RefreshHandler;
+		0x6e invoke-direct v2, Lcom/example/android/snake/SnakeView;->initSnakeView()V
+		0x74 return-void 
+Lcom/example/android/snake/SnakeView; <init> (Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	<init>-BB@0x0 0x0 0x76[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v1, 1
+		0x2 invoke-direct v2, v3, v4, v5, Lcom/example/android/snake/TileView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+		0x8 const/16 v0, 33
+		0xc iput v0, v2, Lcom/example/android/snake/SnakeView;->key_up I
+		0x10 const/16 v0, 52
+		0x14 iput v0, v2, Lcom/example/android/snake/SnakeView;->key_down I
+		0x18 const/16 v0, 32
+		0x1c iput v0, v2, Lcom/example/android/snake/SnakeView;->key_right I
+		0x20 const/16 v0, 47
+		0x24 iput v0, v2, Lcom/example/android/snake/SnakeView;->key_left I
+		0x28 iput v1, v2, Lcom/example/android/snake/SnakeView;->mMode I
+		0x2c iput v1, v2, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x30 iput v1, v2, Lcom/example/android/snake/SnakeView;->mNextDirection I
+		0x34 const-wide/16 v0, 0 # [0.0]
+		0x38 iput-wide v0, v2, Lcom/example/android/snake/SnakeView;->mScore J
+		0x3c const-wide/16 v0, 600 # [600.0]
+		0x40 iput-wide v0, v2, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x44 new-instance v0, Ljava/util/ArrayList;
+		0x48 invoke-direct v0, Ljava/util/ArrayList;-><init>()V
+		0x4e iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x52 new-instance v0, Ljava/util/ArrayList;
+		0x56 invoke-direct v0, Ljava/util/ArrayList;-><init>()V
+		0x5c iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x60 new-instance v0, Lcom/example/android/snake/SnakeView$RefreshHandler;
+		0x64 invoke-direct v0, v2, Lcom/example/android/snake/SnakeView$RefreshHandler;-><init>(Lcom/example/android/snake/SnakeView;)V
+		0x6a iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mRedrawHandler Lcom/example/android/snake/SnakeView$RefreshHandler;
+		0x6e invoke-direct v2, Lcom/example/android/snake/SnakeView;->initSnakeView()V
+		0x74 return-void 
+Lcom/example/android/snake/SnakeView; addRandomApple ()V
+	addRandomApple-BB@0x0 0x0 0x6[ NEXT = 0x4-0x6-addRandomApple-BB@0x6  ] [ PREV = ] 
+		0x0 const/4 v9, 2
+		0x2 const/4 v3, 0
+		0x4 const/4 v1, 0
+	addRandomApple-BB@0x6 0x6 0xa[ NEXT = 0x6-0xa-addRandomApple-BB@0xa 0x6-0x88-addRandomApple-BB@0x88  ] [ PREV = addRandomApple-BB@0x0, addRandomApple-BB@0x80] 
+		0x6 if-nez v1, +41
+	addRandomApple-BB@0xa 0xa 0x50[ NEXT = 0x4e-0x50-addRandomApple-BB@0x50  ] [ PREV = addRandomApple-BB@0x6] 
+		0xa sget-object v7, Lcom/example/android/snake/SnakeView;->RNG Ljava/util/Random;
+		0xe sget v8, Lcom/example/android/snake/SnakeView;->mXTileCount I
+		0x12 sub-int/2addr v8, v9
+		0x14 invoke-virtual v7, v8, Ljava/util/Random;->nextInt(I)I
+		0x1a move-result v7
+		0x1c add-int/lit8 v4, v7, 1
+		0x20 sget-object v7, Lcom/example/android/snake/SnakeView;->RNG Ljava/util/Random;
+		0x24 sget v8, Lcom/example/android/snake/SnakeView;->mYTileCount I
+		0x28 sub-int/2addr v8, v9
+		0x2a invoke-virtual v7, v8, Ljava/util/Random;->nextInt(I)I
+		0x30 move-result v7
+		0x32 add-int/lit8 v5, v7, 1
+		0x36 new-instance v3, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x3a invoke-direct v3, v10, v4, v5, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x40 const/4 v0, 0
+		0x42 iget-object v7, v10, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x46 invoke-virtual v7, Ljava/util/ArrayList;->size()I
+		0x4c move-result v6
+		0x4e const/4 v2, 0
+	addRandomApple-BB@0x50 0x50 0x54[ NEXT = 0x50-0x54-addRandomApple-BB@0x54 0x50-0x78-addRandomApple-BB@0x78  ] [ PREV = addRandomApple-BB@0xa, addRandomApple-BB@0x72] 
+		0x50 if-ge v2, v6, +14
+	addRandomApple-BB@0x54 0x54 0x70[ NEXT = 0x6c-0x70-addRandomApple-BB@0x70 0x6c-0x72-addRandomApple-BB@0x72  ] [ PREV = addRandomApple-BB@0x50] 
+		0x54 iget-object v7, v10, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x58 invoke-virtual v7, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+		0x5e move-result-object v7
+		0x60 check-cast v7, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x64 invoke-virtual v7, v3, Lcom/example/android/snake/SnakeView$Coordinate;->equals(Lcom/example/android/snake/SnakeView$Coordinate;)Z
+		0x6a move-result v7
+		0x6c if-eqz v7, +3
+	addRandomApple-BB@0x70 0x70 0x72[ NEXT = 0x70-0x72-addRandomApple-BB@0x72  ] [ PREV = addRandomApple-BB@0x54] 
+		0x70 const/4 v0, 1
+	addRandomApple-BB@0x72 0x72 0x78[ NEXT = 0x76-0x50-addRandomApple-BB@0x50  ] [ PREV = addRandomApple-BB@0x54, addRandomApple-BB@0x70] 
+		0x72 add-int/lit8 v2, v2, 1
+		0x76 goto -13
+	addRandomApple-BB@0x78 0x78 0x7c[ NEXT = 0x78-0x7c-addRandomApple-BB@0x7c 0x78-0x82-addRandomApple-BB@0x82  ] [ PREV = addRandomApple-BB@0x50] 
+		0x78 if-nez v0, +5
+	addRandomApple-BB@0x7c 0x7c 0x80[ NEXT = 0x7e-0x80-addRandomApple-BB@0x80  ] [ PREV = addRandomApple-BB@0x78] 
+		0x7c const/4 v7, 1
+		0x7e move v1, v7
+	addRandomApple-BB@0x80 0x80 0x82[ NEXT = 0x80-0x6-addRandomApple-BB@0x6  ] [ PREV = addRandomApple-BB@0x7c, addRandomApple-BB@0x82] 
+		0x80 goto -3d
+	addRandomApple-BB@0x82 0x82 0x88[ NEXT = 0x86-0x80-addRandomApple-BB@0x80  ] [ PREV = addRandomApple-BB@0x78] 
+		0x82 const/4 v7, 0
+		0x84 move v1, v7
+		0x86 goto -3
+	addRandomApple-BB@0x88 0x88 0x8c[ NEXT = 0x88-0x8c-addRandomApple-BB@0x8c 0x88-0x9a-addRandomApple-BB@0x9a  ] [ PREV = addRandomApple-BB@0x6] 
+		0x88 if-nez v3, +9
+	addRandomApple-BB@0x8c 0x8c 0x9a[ NEXT = 0x94-0x9a-addRandomApple-BB@0x9a  ] [ PREV = addRandomApple-BB@0x88] 
+		0x8c const-string v7, 'SnakeView'
+		0x90 const-string v8, 'Somehow ended up with a null newCoord!'
+		0x94 invoke-static v7, v8, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	addRandomApple-BB@0x9a 0x9a 0xa6[ NEXT =  ] [ PREV = addRandomApple-BB@0x88, addRandomApple-BB@0x8c] 
+		0x9a iget-object v7, v10, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x9e invoke-virtual v7, v3, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0xa4 return-void 
+Lcom/example/android/snake/SnakeView; coordArrayListToArray (Ljava/util/ArrayList;)[I
+	coordArrayListToArray-BB@0x0 0x0 0x12[ NEXT = 0x10-0x12-coordArrayListToArray-BB@0x12  ] [ PREV = ] 
+		0x0 invoke-virtual v7, Ljava/util/ArrayList;->size()I
+		0x6 move-result v1
+		0x8 mul-int/lit8 v4, v1, 2
+		0xc new-array v3, v4, [I
+		0x10 const/4 v2, 0
+	coordArrayListToArray-BB@0x12 0x12 0x16[ NEXT = 0x12-0x16-coordArrayListToArray-BB@0x16 0x12-0x44-coordArrayListToArray-BB@0x44  ] [ PREV = coordArrayListToArray-BB@0x0, coordArrayListToArray-BB@0x16] 
+		0x12 if-ge v2, v1, +19
+	coordArrayListToArray-BB@0x16 0x16 0x44[ NEXT = 0x42-0x12-coordArrayListToArray-BB@0x12  ] [ PREV = coordArrayListToArray-BB@0x12] 
+		0x16 invoke-virtual v7, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+		0x1c move-result-object v0
+		0x1e check-cast v0, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x22 mul-int/lit8 v4, v2, 2
+		0x26 iget v5, v0, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x2a aput v5, v3, v4
+		0x2e mul-int/lit8 v4, v2, 2
+		0x32 add-int/lit8 v4, v4, 1
+		0x36 iget v5, v0, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x3a aput v5, v3, v4
+		0x3e add-int/lit8 v2, v2, 1
+		0x42 goto -18
+	coordArrayListToArray-BB@0x44 0x44 0x46[ NEXT =  ] [ PREV = coordArrayListToArray-BB@0x12] 
+		0x44 return-object v3
+Lcom/example/android/snake/SnakeView; coordArrayToArrayList ([I)Ljava/util/ArrayList;
+	coordArrayToArrayList-BB@0x0 0x0 0xe[ NEXT = 0xc-0xe-coordArrayToArrayList-BB@0xe  ] [ PREV = ] 
+		0x0 new-instance v1, Ljava/util/ArrayList;
+		0x4 invoke-direct v1, Ljava/util/ArrayList;-><init>()V
+		0xa array-length v2, v7
+		0xc const/4 v3, 0
+	coordArrayToArrayList-BB@0xe 0xe 0x12[ NEXT = 0xe-0x12-coordArrayToArrayList-BB@0x12 0xe-0x34-coordArrayToArrayList-BB@0x34  ] [ PREV = coordArrayToArrayList-BB@0x0, coordArrayToArrayList-BB@0x12] 
+		0xe if-ge v3, v2, +13
+	coordArrayToArrayList-BB@0x12 0x12 0x34[ NEXT = 0x32-0xe-coordArrayToArrayList-BB@0xe  ] [ PREV = coordArrayToArrayList-BB@0xe] 
+		0x12 new-instance v0, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x16 aget v4, v7, v3
+		0x1a add-int/lit8 v5, v3, 1
+		0x1e aget v5, v7, v5
+		0x22 invoke-direct v0, v6, v4, v5, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x28 invoke-virtual v1, v0, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x2e add-int/lit8 v3, v3, 2
+		0x32 goto -12
+	coordArrayToArrayList-BB@0x34 0x34 0x36[ NEXT =  ] [ PREV = coordArrayToArrayList-BB@0xe] 
+		0x34 return-object v1
+Lcom/example/android/snake/SnakeView; initNewGame ()V
+	initNewGame-BB@0x0 0x0 0xbc[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v3, 7
+		0x2 iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x6 invoke-virtual v0, Ljava/util/ArrayList;->clear()V
+		0xc iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x10 invoke-virtual v0, Ljava/util/ArrayList;->clear()V
+		0x16 iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x1a new-instance v1, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x1e invoke-direct v1, v4, v3, v3, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x24 invoke-virtual v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x2a iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x2e new-instance v1, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x32 const/4 v2, 6
+		0x34 invoke-direct v1, v4, v2, v3, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x3a invoke-virtual v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x40 iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x44 new-instance v1, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x48 const/4 v2, 5
+		0x4a invoke-direct v1, v4, v2, v3, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x50 invoke-virtual v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x56 iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x5a new-instance v1, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x5e const/4 v2, 4
+		0x60 invoke-direct v1, v4, v2, v3, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x66 invoke-virtual v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x6c iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x70 new-instance v1, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x74 const/4 v2, 3
+		0x76 invoke-direct v1, v4, v2, v3, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x7c invoke-virtual v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x82 iget-object v0, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x86 new-instance v1, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x8a const/4 v2, 2
+		0x8c invoke-direct v1, v4, v2, v3, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x92 invoke-virtual v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+		0x98 const/4 v0, 1
+		0x9a iput v0, v4, Lcom/example/android/snake/SnakeView;->mNextDirection I
+		0x9e invoke-direct v4, Lcom/example/android/snake/SnakeView;->addRandomApple()V
+		0xa4 invoke-direct v4, Lcom/example/android/snake/SnakeView;->addRandomApple()V
+		0xaa const-wide/16 v0, 600 # [600.0]
+		0xae iput-wide v0, v4, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0xb2 const-wide/16 v0, 0 # [0.0]
+		0xb6 iput-wide v0, v4, Lcom/example/android/snake/SnakeView;->mScore J
+		0xba return-void 
+Lcom/example/android/snake/SnakeView; initSnakeView ()V
+	initSnakeView-BB@0x0 0x0 0x6c[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v3, 1
+		0x2 invoke-virtual v4, v3, Lcom/example/android/snake/SnakeView;->setFocusable(Z)V
+		0x8 invoke-virtual v4, Lcom/example/android/snake/SnakeView;->getContext()Landroid/content/Context;
+		0xe move-result-object v1
+		0x10 invoke-virtual v1, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+		0x16 move-result-object v0
+		0x18 const/4 v1, 4
+		0x1a invoke-virtual v4, v1, Lcom/example/android/snake/SnakeView;->resetTiles(I)V
+		0x20 const v1, 2130837505 # [1.7279965973444867e+38]
+		0x26 invoke-virtual v0, v1, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+		0x2c move-result-object v1
+		0x2e invoke-virtual v4, v3, v1, Lcom/example/android/snake/SnakeView;->loadTile(I Landroid/graphics/drawable/Drawable;)V
+		0x34 const/4 v1, 2
+		0x36 const v2, 2130837506 # [1.7279968001685827e+38]
+		0x3c invoke-virtual v0, v2, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+		0x42 move-result-object v2
+		0x44 invoke-virtual v4, v1, v2, Lcom/example/android/snake/SnakeView;->loadTile(I Landroid/graphics/drawable/Drawable;)V
+		0x4a const/4 v1, 3
+		0x4c const/high16 v2, 32514 # [1.7279963945203906e+38]
+		0x50 invoke-virtual v0, v2, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+		0x56 move-result-object v2
+		0x58 invoke-virtual v4, v1, v2, Lcom/example/android/snake/SnakeView;->loadTile(I Landroid/graphics/drawable/Drawable;)V
+		0x5e invoke-virtual v4, v3, Lcom/example/android/snake/SnakeView;->setFocusableInTouchMode(Z)V
+		0x64 invoke-virtual v4, Lcom/example/android/snake/SnakeView;->requestFocus()Z
+		0x6a return-void 
+Lcom/example/android/snake/SnakeView; updateApples ()V
+	updateApples-BB@0x0 0x0 0xc[ NEXT = 0xa-0xc-updateApples-BB@0xc  ] [ PREV = ] 
+		0x0 iget-object v2, v5, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x4 invoke-virtual v2, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+		0xa move-result-object v1
+	updateApples-BB@0xc 0xc 0x18[ NEXT = 0x14-0x18-updateApples-BB@0x18 0x14-0x36-updateApples-BB@0x36  ] [ PREV = updateApples-BB@0x0, updateApples-BB@0x18] 
+		0xc invoke-interface v1, Ljava/util/Iterator;->hasNext()Z
+		0x12 move-result v2
+		0x14 if-eqz v2, +11
+	updateApples-BB@0x18 0x18 0x36[ NEXT = 0x34-0xc-updateApples-BB@0xc  ] [ PREV = updateApples-BB@0xc] 
+		0x18 invoke-interface v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+		0x1e move-result-object v0
+		0x20 check-cast v0, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x24 const/4 v2, 2
+		0x26 iget v3, v0, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x2a iget v4, v0, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x2e invoke-virtual v5, v2, v3, v4, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+		0x34 goto -14
+	updateApples-BB@0x36 0x36 0x38[ NEXT =  ] [ PREV = updateApples-BB@0xc] 
+		0x36 return-void 
+Lcom/example/android/snake/SnakeView; updateSnake ()V
+	updateSnake-BB@0x0 0x0 0x34[ NEXT = 0x2e-0x34-updateSnake-BB@0x34 0x2e-0xa2-updateSnake-BB@0xa2 0x2e-0xba-updateSnake-BB@0xba 0x2e-0x72-updateSnake-BB@0x72 0x2e-0x8a-updateSnake-BB@0x8a  ] [ PREV = ] 
+		0x0 const/4 v3, 0
+		0x2 iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x6 const/4 v11, 0
+		0x8 invoke-virtual v10, v11, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+		0xe move-result-object v4
+		0x10 check-cast v4, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x14 new-instance v7, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x18 const/4 v10, 1
+		0x1a const/4 v11, 1
+		0x1c invoke-direct v7, v14, v10, v11, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x22 iget v10, v14, Lcom/example/android/snake/SnakeView;->mNextDirection I
+		0x26 iput v10, v14, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x2a iget v10, v14, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x2e packed-switch v10, +e5 (0x1c9)
+	updateSnake-BB@0x34 0x34 0x3e[ NEXT = 0x3a-0x3e-updateSnake-BB@0x3e 0x3a-0x68-updateSnake-BB@0x68  ] [ PREV = updateSnake-BB@0x0, updateSnake-BB@0x72, updateSnake-BB@0x8a, updateSnake-BB@0xa2, updateSnake-BB@0xba] 
+		0x34 iget v10, v7, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x38 const/4 v11, 1
+		0x3a if-lt v10, v11, +17
+	updateSnake-BB@0x3e 0x3e 0x48[ NEXT = 0x44-0x48-updateSnake-BB@0x48 0x44-0x68-updateSnake-BB@0x68  ] [ PREV = updateSnake-BB@0x34] 
+		0x3e iget v10, v7, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x42 const/4 v11, 1
+		0x44 if-lt v10, v11, +12
+	updateSnake-BB@0x48 0x48 0x58[ NEXT = 0x54-0x58-updateSnake-BB@0x58 0x54-0x68-updateSnake-BB@0x68  ] [ PREV = updateSnake-BB@0x3e] 
+		0x48 iget v10, v7, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x4c sget v11, Lcom/example/android/snake/SnakeView;->mXTileCount I
+		0x50 const/4 v12, 2
+		0x52 sub-int/2addr v11, v12
+		0x54 if-gt v10, v11, +a
+	updateSnake-BB@0x58 0x58 0x68[ NEXT = 0x64-0x68-updateSnake-BB@0x68 0x64-0xd2-updateSnake-BB@0xd2  ] [ PREV = updateSnake-BB@0x48] 
+		0x58 iget v10, v7, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x5c sget v11, Lcom/example/android/snake/SnakeView;->mYTileCount I
+		0x60 const/4 v12, 2
+		0x62 sub-int/2addr v11, v12
+		0x64 if-le v10, v11, +37
+	updateSnake-BB@0x68 0x68 0x70[ NEXT = 0x6a-0x70-updateSnake-BB@0x70  ] [ PREV = updateSnake-BB@0x34, updateSnake-BB@0x3e, updateSnake-BB@0x48, updateSnake-BB@0x58] 
+		0x68 const/4 v10, 3
+		0x6a invoke-virtual v14, v10, Lcom/example/android/snake/SnakeView;->setMode(I)V
+	updateSnake-BB@0x70 0x70 0x72[ NEXT =  ] [ PREV = updateSnake-BB@0x68, updateSnake-BB@0x100, updateSnake-BB@0x1b4] 
+		0x70 return-void 
+	updateSnake-BB@0x72 0x72 0x8a[ NEXT = 0x88-0x34-updateSnake-BB@0x34  ] [ PREV = updateSnake-BB@0x0] 
+		0x72 new-instance v7, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x76 iget v10, v4, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x7a add-int/lit8 v10, v10, 1
+		0x7e iget v11, v4, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x82 invoke-direct v7, v14, v10, v11, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0x88 goto -2a
+	updateSnake-BB@0x8a 0x8a 0xa2[ NEXT = 0xa0-0x34-updateSnake-BB@0x34  ] [ PREV = updateSnake-BB@0x0] 
+		0x8a new-instance v7, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x8e iget v10, v4, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x92 const/4 v11, 1
+		0x94 sub-int/2addr v10, v11
+		0x96 iget v11, v4, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x9a invoke-direct v7, v14, v10, v11, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0xa0 goto -36
+	updateSnake-BB@0xa2 0xa2 0xba[ NEXT = 0xb8-0x34-updateSnake-BB@0x34  ] [ PREV = updateSnake-BB@0x0] 
+		0xa2 new-instance v7, Lcom/example/android/snake/SnakeView$Coordinate;
+		0xa6 iget v10, v4, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0xaa iget v11, v4, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0xae const/4 v12, 1
+		0xb0 sub-int/2addr v11, v12
+		0xb2 invoke-direct v7, v14, v10, v11, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0xb8 goto -42
+	updateSnake-BB@0xba 0xba 0xd2[ NEXT = 0xd0-0x34-updateSnake-BB@0x34  ] [ PREV = updateSnake-BB@0x0] 
+		0xba new-instance v7, Lcom/example/android/snake/SnakeView$Coordinate;
+		0xbe iget v10, v4, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0xc2 iget v11, v4, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0xc6 add-int/lit8 v11, v11, 1
+		0xca invoke-direct v7, v14, v10, v11, Lcom/example/android/snake/SnakeView$Coordinate;-><init>(Lcom/example/android/snake/SnakeView; I I)V
+		0xd0 goto -4e
+	updateSnake-BB@0xd2 0xd2 0xe0[ NEXT = 0xde-0xe0-updateSnake-BB@0xe0  ] [ PREV = updateSnake-BB@0x58] 
+		0xd2 iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0xd6 invoke-virtual v10, Ljava/util/ArrayList;->size()I
+		0xdc move-result v9
+		0xde const/4 v8, 0
+	updateSnake-BB@0xe0 0xe0 0xe4[ NEXT = 0xe0-0xe4-updateSnake-BB@0xe4 0xe0-0x110-updateSnake-BB@0x110  ] [ PREV = updateSnake-BB@0xd2, updateSnake-BB@0x10a] 
+		0xe0 if-ge v8, v9, +18
+	updateSnake-BB@0xe4 0xe4 0x100[ NEXT = 0xfc-0x100-updateSnake-BB@0x100 0xfc-0x10a-updateSnake-BB@0x10a  ] [ PREV = updateSnake-BB@0xe0] 
+		0xe4 iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0xe8 invoke-virtual v10, v8, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+		0xee move-result-object v2
+		0xf0 check-cast v2, Lcom/example/android/snake/SnakeView$Coordinate;
+		0xf4 invoke-virtual v2, v7, Lcom/example/android/snake/SnakeView$Coordinate;->equals(Lcom/example/android/snake/SnakeView$Coordinate;)Z
+		0xfa move-result v10
+		0xfc if-eqz v10, +7
+	updateSnake-BB@0x100 0x100 0x10a[ NEXT = 0x108-0x70-updateSnake-BB@0x70  ] [ PREV = updateSnake-BB@0xe4] 
+		0x100 const/4 v10, 3
+		0x102 invoke-virtual v14, v10, Lcom/example/android/snake/SnakeView;->setMode(I)V
+		0x108 goto -4c
+	updateSnake-BB@0x10a 0x10a 0x110[ NEXT = 0x10e-0xe0-updateSnake-BB@0xe0  ] [ PREV = updateSnake-BB@0xe4] 
+		0x10a add-int/lit8 v8, v8, 1
+		0x10e goto -17
+	updateSnake-BB@0x110 0x110 0x11e[ NEXT = 0x11c-0x11e-updateSnake-BB@0x11e  ] [ PREV = updateSnake-BB@0xe0] 
+		0x110 iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x114 invoke-virtual v10, Ljava/util/ArrayList;->size()I
+		0x11a move-result v0
+		0x11c const/4 v1, 0
+	updateSnake-BB@0x11e 0x11e 0x122[ NEXT = 0x11e-0x122-updateSnake-BB@0x122 0x11e-0x17c-updateSnake-BB@0x17c  ] [ PREV = updateSnake-BB@0x110, updateSnake-BB@0x176] 
+		0x11e if-ge v1, v0, +2f
+	updateSnake-BB@0x122 0x122 0x13e[ NEXT = 0x13a-0x13e-updateSnake-BB@0x13e 0x13a-0x176-updateSnake-BB@0x176  ] [ PREV = updateSnake-BB@0x11e] 
+		0x122 iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x126 invoke-virtual v10, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+		0x12c move-result-object v2
+		0x12e check-cast v2, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x132 invoke-virtual v2, v7, Lcom/example/android/snake/SnakeView$Coordinate;->equals(Lcom/example/android/snake/SnakeView$Coordinate;)Z
+		0x138 move-result v10
+		0x13a if-eqz v10, +1e
+	updateSnake-BB@0x13e 0x13e 0x176[ NEXT = 0x174-0x176-updateSnake-BB@0x176  ] [ PREV = updateSnake-BB@0x122] 
+		0x13e iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x142 invoke-virtual v10, v2, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+		0x148 invoke-direct v14, Lcom/example/android/snake/SnakeView;->addRandomApple()V
+		0x14e iget-wide v10, v14, Lcom/example/android/snake/SnakeView;->mScore J
+		0x152 const-wide/16 v12, 1 # [1.0]
+		0x156 add-long/2addr v10, v12
+		0x158 iput-wide v10, v14, Lcom/example/android/snake/SnakeView;->mScore J
+		0x15c iget-wide v10, v14, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x160 long-to-double v10, v10
+		0x162 const-wide v12, 4606281698874543309 # [0.9]
+		0x16c mul-double/2addr v10, v12
+		0x16e double-to-long v10, v10
+		0x170 iput-wide v10, v14, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x174 const/4 v3, 1
+	updateSnake-BB@0x176 0x176 0x17c[ NEXT = 0x17a-0x11e-updateSnake-BB@0x11e  ] [ PREV = updateSnake-BB@0x122, updateSnake-BB@0x13e] 
+		0x176 add-int/lit8 v1, v1, 1
+		0x17a goto -2e
+	updateSnake-BB@0x17c 0x17c 0x18c[ NEXT = 0x188-0x18c-updateSnake-BB@0x18c 0x188-0x1a6-updateSnake-BB@0x1a6  ] [ PREV = updateSnake-BB@0x11e] 
+		0x17c iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x180 const/4 v11, 0
+		0x182 invoke-virtual v10, v11, v7, Ljava/util/ArrayList;->add(I Ljava/lang/Object;)V
+		0x188 if-nez v3, +f
+	updateSnake-BB@0x18c 0x18c 0x1a6[ NEXT = 0x1a0-0x1a6-updateSnake-BB@0x1a6  ] [ PREV = updateSnake-BB@0x17c] 
+		0x18c iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x190 iget-object v11, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x194 invoke-virtual v11, Ljava/util/ArrayList;->size()I
+		0x19a move-result v11
+		0x19c const/4 v12, 1
+		0x19e sub-int/2addr v11, v12
+		0x1a0 invoke-virtual v10, v11, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+	updateSnake-BB@0x1a6 0x1a6 0x1b4[ NEXT = 0x1b2-0x1b4-updateSnake-BB@0x1b4  ] [ PREV = updateSnake-BB@0x17c, updateSnake-BB@0x18c] 
+		0x1a6 const/4 v6, 0
+		0x1a8 iget-object v10, v14, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x1ac invoke-virtual v10, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+		0x1b2 move-result-object v5
+	updateSnake-BB@0x1b4 0x1b4 0x1c0[ NEXT = 0x1bc-0x1c0-updateSnake-BB@0x1c0 0x1bc-0x70-updateSnake-BB@0x70  ] [ PREV = updateSnake-BB@0x1a6, updateSnake-BB@0x1e0] 
+		0x1b4 invoke-interface v5, Ljava/util/Iterator;->hasNext()Z
+		0x1ba move-result v10
+		0x1bc if-eqz v10, -a6
+	updateSnake-BB@0x1c0 0x1c0 0x1d0[ NEXT = 0x1cc-0x1d0-updateSnake-BB@0x1d0 0x1cc-0x1e6-updateSnake-BB@0x1e6  ] [ PREV = updateSnake-BB@0x1b4] 
+		0x1c0 invoke-interface v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+		0x1c6 move-result-object v2
+		0x1c8 check-cast v2, Lcom/example/android/snake/SnakeView$Coordinate;
+		0x1cc if-nez v6, +d
+	updateSnake-BB@0x1d0 0x1d0 0x1e0[ NEXT = 0x1da-0x1e0-updateSnake-BB@0x1e0  ] [ PREV = updateSnake-BB@0x1c0] 
+		0x1d0 const/4 v10, 2
+		0x1d2 iget v11, v2, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x1d6 iget v12, v2, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x1da invoke-virtual v14, v10, v11, v12, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+	updateSnake-BB@0x1e0 0x1e0 0x1e6[ NEXT = 0x1e4-0x1b4-updateSnake-BB@0x1b4  ] [ PREV = updateSnake-BB@0x1d0, updateSnake-BB@0x1e6] 
+		0x1e0 add-int/lit8 v6, v6, 1
+		0x1e4 goto -18
+	updateSnake-BB@0x1e6 0x1e6 0x1f8[ NEXT = 0x1f6-0x1e0-updateSnake-BB@0x1e0  ] [ PREV = updateSnake-BB@0x1c0] 
+		0x1e6 const/4 v10, 1
+		0x1e8 iget v11, v2, Lcom/example/android/snake/SnakeView$Coordinate;->x I
+		0x1ec iget v12, v2, Lcom/example/android/snake/SnakeView$Coordinate;->y I
+		0x1f0 invoke-virtual v14, v10, v11, v12, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+		0x1f6 goto -b
+	updateSnake-BB@0x1f8 0x1f8 0x210[ NEXT =  ] [ PREV = ] 
+		0x1f8 packed-switch-payload 1 2 3 4
+Lcom/example/android/snake/SnakeView; updateWalls ()V
+	updateWalls-BB@0x0 0x0 0x8[ NEXT = 0x6-0x8-updateWalls-BB@0x8  ] [ PREV = ] 
+		0x0 const/4 v5, 0
+		0x2 const/4 v4, 1
+		0x4 const/4 v3, 3
+		0x6 const/4 v0, 0
+	updateWalls-BB@0x8 0x8 0x10[ NEXT = 0xc-0x10-updateWalls-BB@0x10 0xc-0x28-updateWalls-BB@0x28  ] [ PREV = updateWalls-BB@0x0, updateWalls-BB@0x10] 
+		0x8 sget v2, Lcom/example/android/snake/SnakeView;->mXTileCount I
+		0xc if-ge v0, v2, +e
+	updateWalls-BB@0x10 0x10 0x28[ NEXT = 0x26-0x8-updateWalls-BB@0x8  ] [ PREV = updateWalls-BB@0x8] 
+		0x10 invoke-virtual v6, v3, v0, v5, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+		0x16 sget v2, Lcom/example/android/snake/SnakeView;->mYTileCount I
+		0x1a sub-int/2addr v2, v4
+		0x1c invoke-virtual v6, v3, v0, v2, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+		0x22 add-int/lit8 v0, v0, 1
+		0x26 goto -f
+	updateWalls-BB@0x28 0x28 0x2a[ NEXT = 0x28-0x2a-updateWalls-BB@0x2a  ] [ PREV = updateWalls-BB@0x8] 
+		0x28 const/4 v1, 1
+	updateWalls-BB@0x2a 0x2a 0x34[ NEXT = 0x30-0x34-updateWalls-BB@0x34 0x30-0x4c-updateWalls-BB@0x4c  ] [ PREV = updateWalls-BB@0x28, updateWalls-BB@0x34] 
+		0x2a sget v2, Lcom/example/android/snake/SnakeView;->mYTileCount I
+		0x2e sub-int/2addr v2, v4
+		0x30 if-ge v1, v2, +e
+	updateWalls-BB@0x34 0x34 0x4c[ NEXT = 0x4a-0x2a-updateWalls-BB@0x2a  ] [ PREV = updateWalls-BB@0x2a] 
+		0x34 invoke-virtual v6, v3, v5, v1, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+		0x3a sget v2, Lcom/example/android/snake/SnakeView;->mXTileCount I
+		0x3e sub-int/2addr v2, v4
+		0x40 invoke-virtual v6, v3, v2, v1, Lcom/example/android/snake/SnakeView;->setTile(I I I)V
+		0x46 add-int/lit8 v1, v1, 1
+		0x4a goto -10
+	updateWalls-BB@0x4c 0x4c 0x4e[ NEXT =  ] [ PREV = updateWalls-BB@0x2a] 
+		0x4c return-void 
+Lcom/example/android/snake/SnakeView; onKeyDown (I Landroid/view/KeyEvent;)Z
+	onKeyDown-BB@0x0 0x0 0xbe[ NEXT = 0xba-0xbe-onKeyDown-BB@0xbe 0xba-0x11e-onKeyDown-BB@0x11e  ] [ PREV = ] 
+		0x0 const/4 v7, 4
+		0x2 const/4 v6, 0
+		0x4 const/4 v5, 3
+		0x6 const/4 v4, 2
+		0x8 const/4 v3, 1
+		0xa sget-object v0, Ljava/lang/System;->out Ljava/io/PrintStream;
+		0xe new-instance v1, Ljava/lang/StringBuilder;
+		0x12 invoke-direct v1, Ljava/lang/StringBuilder;-><init>()V
+		0x18 const-string v2, 'keycode: '
+		0x1c invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x22 move-result-object v1
+		0x24 invoke-virtual v1, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0x2a move-result-object v1
+		0x2c invoke-virtual v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+		0x32 move-result-object v1
+		0x34 invoke-virtual v0, v1, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+		0x3a sget-object v0, Ljava/lang/System;->out Ljava/io/PrintStream;
+		0x3e new-instance v1, Ljava/lang/StringBuilder;
+		0x42 invoke-direct v1, Ljava/lang/StringBuilder;-><init>()V
+		0x48 const-string v2, 'keycode up down right left: '
+		0x4c invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x52 move-result-object v1
+		0x54 iget v2, v8, Lcom/example/android/snake/SnakeView;->key_up I
+		0x58 invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0x5e move-result-object v1
+		0x60 const-string v2, ' '
+		0x64 invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x6a move-result-object v1
+		0x6c iget v2, v8, Lcom/example/android/snake/SnakeView;->key_down I
+		0x70 invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0x76 move-result-object v1
+		0x78 const-string v2, ' '
+		0x7c invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x82 move-result-object v1
+		0x84 iget v2, v8, Lcom/example/android/snake/SnakeView;->key_right I
+		0x88 invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0x8e move-result-object v1
+		0x90 const-string v2, ' '
+		0x94 invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x9a move-result-object v1
+		0x9c iget v2, v8, Lcom/example/android/snake/SnakeView;->key_left I
+		0xa0 invoke-virtual v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+		0xa6 move-result-object v1
+		0xa8 invoke-virtual v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+		0xae move-result-object v1
+		0xb0 invoke-virtual v0, v1, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+		0xb6 iget v0, v8, Lcom/example/android/snake/SnakeView;->key_up I
+		0xba if-ne v9, v0, +32
+	onKeyDown-BB@0xbe 0xbe 0xc6[ NEXT = 0xc2-0xc6-onKeyDown-BB@0xc6 0xc2-0xee-onKeyDown-BB@0xee  ] [ PREV = onKeyDown-BB@0x0] 
+		0xbe iget v0, v8, Lcom/example/android/snake/SnakeView;->mMode I
+		0xc2 if-ne v0, v3, +16
+	onKeyDown-BB@0xc6 0xc6 0xc8[ NEXT = 0xc6-0xc8-onKeyDown-BB@0xc8  ] [ PREV = onKeyDown-BB@0xbe] 
+		0xc6 move v0, v3
+	onKeyDown-BB@0xc8 0xc8 0xd0[ NEXT = 0xcc-0xd0-onKeyDown-BB@0xd0 0xcc-0xf2-onKeyDown-BB@0xf2  ] [ PREV = onKeyDown-BB@0xc6, onKeyDown-BB@0xee] 
+		0xc8 iget v1, v8, Lcom/example/android/snake/SnakeView;->mMode I
+		0xcc if-ne v1, v5, +13
+	onKeyDown-BB@0xd0 0xd0 0xd2[ NEXT = 0xd0-0xd2-onKeyDown-BB@0xd2  ] [ PREV = onKeyDown-BB@0xc8] 
+		0xd0 move v1, v3
+	onKeyDown-BB@0xd2 0xd2 0xd8[ NEXT = 0xd4-0xd8-onKeyDown-BB@0xd8 0xd4-0xf6-onKeyDown-BB@0xf6  ] [ PREV = onKeyDown-BB@0xd0, onKeyDown-BB@0xf2] 
+		0xd2 or-int/2addr v0, v1
+		0xd4 if-eqz v0, +11
+	onKeyDown-BB@0xd8 0xd8 0xec[ NEXT = 0xea-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0xd2] 
+		0xd8 invoke-direct v8, Lcom/example/android/snake/SnakeView;->initNewGame()V
+		0xde invoke-virtual v8, v4, Lcom/example/android/snake/SnakeView;->setMode(I)V
+		0xe4 invoke-virtual v8, Lcom/example/android/snake/SnakeView;->update()V
+		0xea move v0, v3
+	onKeyDown-BB@0xec 0xec 0xee[ NEXT =  ] [ PREV = onKeyDown-BB@0xd8, onKeyDown-BB@0xfe, onKeyDown-BB@0x11a, onKeyDown-BB@0x132, onKeyDown-BB@0x14a, onKeyDown-BB@0x162, onKeyDown-BB@0x166] 
+		0xec return v0
+	onKeyDown-BB@0xee 0xee 0xf2[ NEXT = 0xf0-0xc8-onKeyDown-BB@0xc8  ] [ PREV = onKeyDown-BB@0xbe] 
+		0xee move v0, v6
+		0xf0 goto -14
+	onKeyDown-BB@0xf2 0xf2 0xf6[ NEXT = 0xf4-0xd2-onKeyDown-BB@0xd2  ] [ PREV = onKeyDown-BB@0xc8] 
+		0xf2 move v1, v6
+		0xf4 goto -11
+	onKeyDown-BB@0xf6 0xf6 0xfe[ NEXT = 0xfa-0xfe-onKeyDown-BB@0xfe 0xfa-0x10e-onKeyDown-BB@0x10e  ] [ PREV = onKeyDown-BB@0xd2] 
+		0xf6 iget v0, v8, Lcom/example/android/snake/SnakeView;->mMode I
+		0xfa if-nez v0, +a
+	onKeyDown-BB@0xfe 0xfe 0x10e[ NEXT = 0x10c-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0xf6] 
+		0xfe invoke-virtual v8, v4, Lcom/example/android/snake/SnakeView;->setMode(I)V
+		0x104 invoke-virtual v8, Lcom/example/android/snake/SnakeView;->update()V
+		0x10a move v0, v3
+		0x10c goto -10
+	onKeyDown-BB@0x10e 0x10e 0x116[ NEXT = 0x112-0x116-onKeyDown-BB@0x116 0x112-0x11a-onKeyDown-BB@0x11a  ] [ PREV = onKeyDown-BB@0xf6] 
+		0x10e iget v0, v8, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x112 if-eq v0, v4, +4
+	onKeyDown-BB@0x116 0x116 0x11a[ NEXT = 0x116-0x11a-onKeyDown-BB@0x11a  ] [ PREV = onKeyDown-BB@0x10e] 
+		0x116 iput v3, v8, Lcom/example/android/snake/SnakeView;->mNextDirection I
+	onKeyDown-BB@0x11a 0x11a 0x11e[ NEXT = 0x11c-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0x10e, onKeyDown-BB@0x116] 
+		0x11a move v0, v3
+		0x11c goto -18
+	onKeyDown-BB@0x11e 0x11e 0x126[ NEXT = 0x122-0x126-onKeyDown-BB@0x126 0x122-0x136-onKeyDown-BB@0x136  ] [ PREV = onKeyDown-BB@0x0] 
+		0x11e iget v0, v8, Lcom/example/android/snake/SnakeView;->key_down I
+		0x122 if-ne v9, v0, +a
+	onKeyDown-BB@0x126 0x126 0x12e[ NEXT = 0x12a-0x12e-onKeyDown-BB@0x12e 0x12a-0x132-onKeyDown-BB@0x132  ] [ PREV = onKeyDown-BB@0x11e] 
+		0x126 iget v0, v8, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x12a if-eq v0, v3, +4
+	onKeyDown-BB@0x12e 0x12e 0x132[ NEXT = 0x12e-0x132-onKeyDown-BB@0x132  ] [ PREV = onKeyDown-BB@0x126] 
+		0x12e iput v4, v8, Lcom/example/android/snake/SnakeView;->mNextDirection I
+	onKeyDown-BB@0x132 0x132 0x136[ NEXT = 0x134-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0x126, onKeyDown-BB@0x12e] 
+		0x132 move v0, v3
+		0x134 goto -24
+	onKeyDown-BB@0x136 0x136 0x13e[ NEXT = 0x13a-0x13e-onKeyDown-BB@0x13e 0x13a-0x14e-onKeyDown-BB@0x14e  ] [ PREV = onKeyDown-BB@0x11e] 
+		0x136 iget v0, v8, Lcom/example/android/snake/SnakeView;->key_left I
+		0x13a if-ne v9, v0, +a
+	onKeyDown-BB@0x13e 0x13e 0x146[ NEXT = 0x142-0x146-onKeyDown-BB@0x146 0x142-0x14a-onKeyDown-BB@0x14a  ] [ PREV = onKeyDown-BB@0x136] 
+		0x13e iget v0, v8, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x142 if-eq v0, v5, +4
+	onKeyDown-BB@0x146 0x146 0x14a[ NEXT = 0x146-0x14a-onKeyDown-BB@0x14a  ] [ PREV = onKeyDown-BB@0x13e] 
+		0x146 iput v7, v8, Lcom/example/android/snake/SnakeView;->mNextDirection I
+	onKeyDown-BB@0x14a 0x14a 0x14e[ NEXT = 0x14c-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0x13e, onKeyDown-BB@0x146] 
+		0x14a move v0, v3
+		0x14c goto -30
+	onKeyDown-BB@0x14e 0x14e 0x156[ NEXT = 0x152-0x156-onKeyDown-BB@0x156 0x152-0x166-onKeyDown-BB@0x166  ] [ PREV = onKeyDown-BB@0x136] 
+		0x14e iget v0, v8, Lcom/example/android/snake/SnakeView;->key_right I
+		0x152 if-ne v9, v0, +a
+	onKeyDown-BB@0x156 0x156 0x15e[ NEXT = 0x15a-0x15e-onKeyDown-BB@0x15e 0x15a-0x162-onKeyDown-BB@0x162  ] [ PREV = onKeyDown-BB@0x14e] 
+		0x156 iget v0, v8, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x15a if-eq v0, v7, +4
+	onKeyDown-BB@0x15e 0x15e 0x162[ NEXT = 0x15e-0x162-onKeyDown-BB@0x162  ] [ PREV = onKeyDown-BB@0x156] 
+		0x15e iput v5, v8, Lcom/example/android/snake/SnakeView;->mNextDirection I
+	onKeyDown-BB@0x162 0x162 0x166[ NEXT = 0x164-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0x156, onKeyDown-BB@0x15e] 
+		0x162 move v0, v3
+		0x164 goto -3c
+	onKeyDown-BB@0x166 0x166 0x170[ NEXT = 0x16e-0xec-onKeyDown-BB@0xec  ] [ PREV = onKeyDown-BB@0x14e] 
+		0x166 invoke-super v8, v9, v10, Lcom/example/android/snake/TileView;->onKeyDown(I Landroid/view/KeyEvent;)Z
+		0x16c move-result v0
+		0x16e goto -41
+Lcom/example/android/snake/SnakeView; restoreState (Landroid/os/Bundle;)V
+	restoreState-BB@0x0 0x0 0x7a[ NEXT =  ] [ PREV = ] 
+		0x0 const/4 v0, 0
+		0x2 invoke-virtual v2, v0, Lcom/example/android/snake/SnakeView;->setMode(I)V
+		0x8 const-string v0, 'mAppleList'
+		0xc invoke-virtual v3, v0, Landroid/os/Bundle;->getIntArray(Ljava/lang/String;)[I
+		0x12 move-result-object v0
+		0x14 invoke-direct v2, v0, Lcom/example/android/snake/SnakeView;->coordArrayToArrayList([I)Ljava/util/ArrayList;
+		0x1a move-result-object v0
+		0x1c iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x20 const-string v0, 'mDirection'
+		0x24 invoke-virtual v3, v0, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+		0x2a move-result v0
+		0x2c iput v0, v2, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x30 const-string v0, 'mNextDirection'
+		0x34 invoke-virtual v3, v0, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+		0x3a move-result v0
+		0x3c iput v0, v2, Lcom/example/android/snake/SnakeView;->mNextDirection I
+		0x40 const-string v0, 'mMoveDelay'
+		0x44 invoke-virtual v3, v0, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+		0x4a move-result-wide v0
+		0x4c iput-wide v0, v2, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x50 const-string v0, 'mScore'
+		0x54 invoke-virtual v3, v0, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+		0x5a move-result-wide v0
+		0x5c iput-wide v0, v2, Lcom/example/android/snake/SnakeView;->mScore J
+		0x60 const-string v0, 'mSnakeTrail'
+		0x64 invoke-virtual v3, v0, Landroid/os/Bundle;->getIntArray(Ljava/lang/String;)[I
+		0x6a move-result-object v0
+		0x6c invoke-direct v2, v0, Lcom/example/android/snake/SnakeView;->coordArrayToArrayList([I)Ljava/util/ArrayList;
+		0x72 move-result-object v0
+		0x74 iput-object v0, v2, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0x78 return-void 
+Lcom/example/android/snake/SnakeView; saveState ()Landroid/os/Bundle;
+	saveState-BB@0x0 0x0 0xb0[ NEXT =  ] [ PREV = ] 
+		0x0 new-instance v0, Landroid/os/Bundle;
+		0x4 invoke-direct v0, Landroid/os/Bundle;-><init>()V
+		0xa const-string v1, 'mAppleList'
+		0xe iget-object v2, v4, Lcom/example/android/snake/SnakeView;->mAppleList Ljava/util/ArrayList;
+		0x12 invoke-direct v4, v2, Lcom/example/android/snake/SnakeView;->coordArrayListToArray(Ljava/util/ArrayList;)[I
+		0x18 move-result-object v2
+		0x1a invoke-virtual v0, v1, v2, Landroid/os/Bundle;->putIntArray(Ljava/lang/String; [I)V
+		0x20 const-string v1, 'mDirection'
+		0x24 iget v2, v4, Lcom/example/android/snake/SnakeView;->mDirection I
+		0x28 invoke-static v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+		0x2e move-result-object v2
+		0x30 invoke-virtual v2, Ljava/lang/Integer;->intValue()I
+		0x36 move-result v2
+		0x38 invoke-virtual v0, v1, v2, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+		0x3e const-string v1, 'mNextDirection'
+		0x42 iget v2, v4, Lcom/example/android/snake/SnakeView;->mNextDirection I
+		0x46 invoke-static v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+		0x4c move-result-object v2
+		0x4e invoke-virtual v2, Ljava/lang/Integer;->intValue()I
+		0x54 move-result v2
+		0x56 invoke-virtual v0, v1, v2, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+		0x5c const-string v1, 'mMoveDelay'
+		0x60 iget-wide v2, v4, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x64 invoke-static v2, v3, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+		0x6a move-result-object v2
+		0x6c invoke-virtual v2, Ljava/lang/Long;->longValue()J
+		0x72 move-result-wide v2
+		0x74 invoke-virtual v0, v1, v2, v3, Landroid/os/Bundle;->putLong(Ljava/lang/String; J)V
+		0x7a const-string v1, 'mScore'
+		0x7e iget-wide v2, v4, Lcom/example/android/snake/SnakeView;->mScore J
+		0x82 invoke-static v2, v3, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+		0x88 move-result-object v2
+		0x8a invoke-virtual v2, Ljava/lang/Long;->longValue()J
+		0x90 move-result-wide v2
+		0x92 invoke-virtual v0, v1, v2, v3, Landroid/os/Bundle;->putLong(Ljava/lang/String; J)V
+		0x98 const-string v1, 'mSnakeTrail'
+		0x9c iget-object v2, v4, Lcom/example/android/snake/SnakeView;->mSnakeTrail Ljava/util/ArrayList;
+		0xa0 invoke-direct v4, v2, Lcom/example/android/snake/SnakeView;->coordArrayListToArray(Ljava/util/ArrayList;)[I
+		0xa6 move-result-object v2
+		0xa8 invoke-virtual v0, v1, v2, Landroid/os/Bundle;->putIntArray(Ljava/lang/String; [I)V
+		0xae return-object v0
+Lcom/example/android/snake/SnakeView; setMode (I)V
+	setMode-BB@0x0 0x0 0x12[ NEXT = 0xe-0x12-setMode-BB@0x12 0xe-0x34-setMode-BB@0x34  ] [ PREV = ] 
+		0x0 const/4 v4, 2
+		0x2 const/4 v5, 1
+		0x4 const/4 v6, 0
+		0x6 iget v0, v7, Lcom/example/android/snake/SnakeView;->mMode I
+		0xa iput v8, v7, Lcom/example/android/snake/SnakeView;->mMode I
+		0xe if-ne v8, v4, +13
+	setMode-BB@0x12 0x12 0x14[ NEXT = 0x12-0x14-setMode-BB@0x14  ] [ PREV = setMode-BB@0x0] 
+		0x12 move v3, v5
+	setMode-BB@0x14 0x14 0x18[ NEXT = 0x14-0x18-setMode-BB@0x18 0x14-0x38-setMode-BB@0x38  ] [ PREV = setMode-BB@0x12, setMode-BB@0x34] 
+		0x14 if-eq v0, v4, +12
+	setMode-BB@0x18 0x18 0x1a[ NEXT = 0x18-0x1a-setMode-BB@0x1a  ] [ PREV = setMode-BB@0x14] 
+		0x18 move v4, v5
+	setMode-BB@0x1a 0x1a 0x20[ NEXT = 0x1c-0x20-setMode-BB@0x20 0x1c-0x3c-setMode-BB@0x3c  ] [ PREV = setMode-BB@0x18, setMode-BB@0x38] 
+		0x1a and-int/2addr v3, v4
+		0x1c if-eqz v3, +10
+	setMode-BB@0x20 0x20 0x32[ NEXT = 0x2c-0x32-setMode-BB@0x32  ] [ PREV = setMode-BB@0x1a] 
+		0x20 iget-object v3, v7, Lcom/example/android/snake/SnakeView;->mStatusText Landroid/widget/TextView;
+		0x24 const/4 v4, 4
+		0x26 invoke-virtual v3, v4, Landroid/widget/TextView;->setVisibility(I)V
+		0x2c invoke-virtual v7, Lcom/example/android/snake/SnakeView;->update()V
+	setMode-BB@0x32 0x32 0x34[ NEXT =  ] [ PREV = setMode-BB@0x20, setMode-BB@0xc2] 
+		0x32 return-void 
+	setMode-BB@0x34 0x34 0x38[ NEXT = 0x36-0x14-setMode-BB@0x14  ] [ PREV = setMode-BB@0x0] 
+		0x34 move v3, v6
+		0x36 goto -11
+	setMode-BB@0x38 0x38 0x3c[ NEXT = 0x3a-0x1a-setMode-BB@0x1a  ] [ PREV = setMode-BB@0x14] 
+		0x38 move v4, v6
+		0x3a goto -10
+	setMode-BB@0x3c 0x3c 0x54[ NEXT = 0x50-0x54-setMode-BB@0x54 0x50-0x62-setMode-BB@0x62  ] [ PREV = setMode-BB@0x1a] 
+		0x3c invoke-virtual v7, Lcom/example/android/snake/SnakeView;->getContext()Landroid/content/Context;
+		0x42 move-result-object v3
+		0x44 invoke-virtual v3, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+		0x4a move-result-object v1
+		0x4c const-string v2, ''
+		0x50 if-nez v8, +9
+	setMode-BB@0x54 0x54 0x62[ NEXT = 0x60-0x62-setMode-BB@0x62  ] [ PREV = setMode-BB@0x3c] 
+		0x54 const v3, 2130968577 # [1.754581157260185e+38]
+		0x5a invoke-virtual v1, v3, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+		0x60 move-result-object v2
+	setMode-BB@0x62 0x62 0x66[ NEXT = 0x62-0x66-setMode-BB@0x66 0x62-0x72-setMode-BB@0x72  ] [ PREV = setMode-BB@0x3c, setMode-BB@0x54] 
+		0x62 if-ne v8, v5, +8
+	setMode-BB@0x66 0x66 0x72[ NEXT = 0x70-0x72-setMode-BB@0x72  ] [ PREV = setMode-BB@0x62] 
+		0x66 const/high16 v3, 32516 # [1.754580954436089e+38]
+		0x6a invoke-virtual v1, v3, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+		0x70 move-result-object v2
+	setMode-BB@0x72 0x72 0x78[ NEXT = 0x74-0x78-setMode-BB@0x78 0x74-0xc2-setMode-BB@0xc2  ] [ PREV = setMode-BB@0x62, setMode-BB@0x66] 
+		0x72 const/4 v3, 3
+		0x74 if-ne v8, v3, +27
+	setMode-BB@0x78 0x78 0xc2[ NEXT = 0xc0-0xc2-setMode-BB@0xc2  ] [ PREV = setMode-BB@0x72] 
+		0x78 new-instance v3, Ljava/lang/StringBuilder;
+		0x7c invoke-direct v3, Ljava/lang/StringBuilder;-><init>()V
+		0x82 const v4, 2130968578 # [1.754581360084281e+38]
+		0x88 invoke-virtual v1, v4, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+		0x8e move-result-object v4
+		0x90 invoke-virtual v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0x96 move-result-object v3
+		0x98 iget-wide v4, v7, Lcom/example/android/snake/SnakeView;->mScore J
+		0x9c invoke-virtual v3, v4, v5, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+		0xa2 move-result-object v3
+		0xa4 const v4, 2130968579 # [1.754581562908377e+38]
+		0xaa invoke-virtual v1, v4, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+		0xb0 move-result-object v4
+		0xb2 invoke-virtual v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+		0xb8 move-result-object v3
+		0xba invoke-virtual v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+		0xc0 move-result-object v2
+	setMode-BB@0xc2 0xc2 0xd8[ NEXT = 0xd6-0x32-setMode-BB@0x32  ] [ PREV = setMode-BB@0x72, setMode-BB@0x78] 
+		0xc2 iget-object v3, v7, Lcom/example/android/snake/SnakeView;->mStatusText Landroid/widget/TextView;
+		0xc6 invoke-virtual v3, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+		0xcc iget-object v3, v7, Lcom/example/android/snake/SnakeView;->mStatusText Landroid/widget/TextView;
+		0xd0 invoke-virtual v3, v6, Landroid/widget/TextView;->setVisibility(I)V
+		0xd6 goto -52
+Lcom/example/android/snake/SnakeView; setTextView (Landroid/widget/TextView;)V
+	setTextView-BB@0x0 0x0 0x6[ NEXT =  ] [ PREV = ] 
+		0x0 iput-object v1, v0, Lcom/example/android/snake/SnakeView;->mStatusText Landroid/widget/TextView;
+		0x4 return-void 
+Lcom/example/android/snake/SnakeView; update ()V
+	update-BB@0x0 0x0 0xa[ NEXT = 0x6-0xa-update-BB@0xa 0x6-0x50-update-BB@0x50  ] [ PREV = ] 
+		0x0 iget v2, v6, Lcom/example/android/snake/SnakeView;->mMode I
+		0x4 const/4 v3, 2
+		0x6 if-ne v2, v3, +25
+	update-BB@0xa 0xa 0x26[ NEXT = 0x22-0x26-update-BB@0x26 0x22-0x42-update-BB@0x42  ] [ PREV = update-BB@0x0] 
+		0xa invoke-static Ljava/lang/System;->currentTimeMillis()J
+		0x10 move-result-wide v0
+		0x12 iget-wide v2, v6, Lcom/example/android/snake/SnakeView;->mLastMove J
+		0x16 sub-long v2, v0, v2
+		0x1a iget-wide v4, v6, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x1e cmp-long v2, v2, v4
+		0x22 if-lez v2, +10
+	update-BB@0x26 0x26 0x42[ NEXT = 0x3e-0x42-update-BB@0x42  ] [ PREV = update-BB@0xa] 
+		0x26 invoke-virtual v6, Lcom/example/android/snake/SnakeView;->clearTiles()V
+		0x2c invoke-direct v6, Lcom/example/android/snake/SnakeView;->updateWalls()V
+		0x32 invoke-direct v6, Lcom/example/android/snake/SnakeView;->updateSnake()V
+		0x38 invoke-direct v6, Lcom/example/android/snake/SnakeView;->updateApples()V
+		0x3e iput-wide v0, v6, Lcom/example/android/snake/SnakeView;->mLastMove J
+	update-BB@0x42 0x42 0x50[ NEXT = 0x4a-0x50-update-BB@0x50  ] [ PREV = update-BB@0xa, update-BB@0x26] 
+		0x42 iget-object v2, v6, Lcom/example/android/snake/SnakeView;->mRedrawHandler Lcom/example/android/snake/SnakeView$RefreshHandler;
+		0x46 iget-wide v3, v6, Lcom/example/android/snake/SnakeView;->mMoveDelay J
+		0x4a invoke-virtual v2, v3, v4, Lcom/example/android/snake/SnakeView$RefreshHandler;->sleep(J)V
+	update-BB@0x50 0x50 0x52[ NEXT =  ] [ PREV = update-BB@0x0, update-BB@0x42] 
+		0x50 return-void 
