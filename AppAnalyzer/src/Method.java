@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Method class. This is the same as IntraProcedural Graph
@@ -13,11 +14,13 @@ public class Method implements GraphComponent {
 	private ArrayList<String> paramsTypes;
 	private String returnType;
 	private ArrayList<GraphComponent> basicblocks;
+	private HashMap<String, BasicBlock> basicBlockMap;
 	
 	
 	public Method(){
 		basicblocks = new ArrayList<GraphComponent>();
 		paramsTypes = new ArrayList<String>();
+		basicBlockMap = new HashMap<String, BasicBlock>();
 	}
 
 	public String getPackageAndClass() {
@@ -66,6 +69,8 @@ public class Method implements GraphComponent {
 	public void addComponent(GraphComponent e) {
 		basicblocks.add(e);
 		
+		if(e instanceof BasicBlock)
+			this.basicBlockMap.put(((BasicBlock) e).getName(), (BasicBlock)e);
 	}
 
 	@Override
