@@ -9,4 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+    <servlet>
+   <servlet-name>fileUpload</servlet-name>
+   <servlet-class>FileUploadServlet</servlet-class>
+   <multipart-config>
+        <max-file-size>3145728</max-file-size>
+  </multipart-config>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>fileUpload</servlet-name>
+   <url-pattern>/fileUpload</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
+
+ 
+
