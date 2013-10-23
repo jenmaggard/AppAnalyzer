@@ -7,7 +7,6 @@
 <html>
  
 	<head>
-    <base href="<%=basePath%>">
     
     <title>Display file upload form to the user</title>
 	<meta http-equiv="pragma" content="no-cache">
