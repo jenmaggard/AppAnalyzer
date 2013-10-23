@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 /**
@@ -15,12 +16,14 @@ public class BasicBlock implements GraphComponent{
 	private HashSet<String> next;
 	private HashSet<String> prev;
 	private ArrayList<GraphComponent> instructions;
+	private HashMap<String, Instruction> instructionMap;
 	
 	
 	public BasicBlock(){
 		instructions = new ArrayList<GraphComponent>();
 		next = new HashSet<String>();
 		prev = new HashSet<String>();
+		instructionMap = new HashMap<String, Instruction>();
 	}
 
 
@@ -78,6 +81,9 @@ public class BasicBlock implements GraphComponent{
 	@Override
 	public void addComponent(GraphComponent e) {
 		instructions.add(e);
+		
+		if(e instanceof Instruction)
+			this.instructionMap.put(((Instruction) e).getAddress(), (Instruction)e);
 	}
 
 
