@@ -65,13 +65,20 @@ public class BasicBlock implements GraphComponent{
 		next.add(n);
 	}
 
-
+	public void revomeNext(String n){
+		next.remove(n);
+	}
+	
 	public HashSet<String> getPrev() {
 		return prev;
 	}
 	
 	public void addPrev(String p){
 		prev.add(p);
+	}
+	
+	public void removePrev(String p){
+		prev.remove(p);
 	}
 	
 	public ArrayList<GraphComponent> getInstructions(){

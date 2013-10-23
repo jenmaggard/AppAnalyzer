@@ -26,6 +26,18 @@ public class CFG implements GraphComponent{
 	public ArrayList<GraphComponent> getMethods() {
 		return methods;
 	}
+	
+	public void detectLoops(){
+		for(GraphComponent method: methods){
+			((Method) method).removeLoops();
+		}
+	}
+	
+	public void computeBBOrder(){
+		for(GraphComponent method: methods){
+			((Method) method).computeBBOrder();
+		}
+	}
 
 	@Override
 	public void addComponent(GraphComponent e) {

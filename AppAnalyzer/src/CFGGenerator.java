@@ -70,6 +70,13 @@ public class CFGGenerator implements GraphGenerator{
 			e.printStackTrace();
 		}
 		
+		
+		//Now we need to remove the loops from the CFG. 
+		cfg.detectLoops();
+		
+		//Now determine BB order for each method.
+		cfg.computeBBOrder();
+		
 		return cfg;
 	}
 	
@@ -180,7 +187,9 @@ public class CFGGenerator implements GraphGenerator{
 			nexts = nexts.substring(index+1).trim();
 			String[] next =  nexts.split(" ");
 			for(String current : next){
-				bb.addNext(current.trim());
+				index = current.indexOf('-');
+				index = current.indexOf('-', index+1);
+				bb.addNext(current.substring(index+1).trim());
 			}
 			
 			index = prevs.indexOf('=');
