@@ -44,20 +44,16 @@ public class FileUploadServlet extends HttpServlet {
       String filePath = uploadedFile.getAbsolutePath();
       System.out.println(filePath);
       FileOutputStream os = new FileOutputStream(uploadedFile);
-      if(!uploadedFile.exists()){
-    	  os.write(b);
-    	  os.close();
-    	  System.out.println("Save the uploaded file under "+filePath);
-      }
-      else System.out.println("The uploaded file already exits.");
+      os.write(b);
+      os.close();
+      System.out.println("Save the uploaded file under "+filePath);
       is.close();
     }
 
     if(fileName != null){
     	System.out.println("Start decompiling...");
     	AndroGuard ag = new AndroGuard(fileName);
-    	ag.decompile();
-    	System.out.println("Byte Code file is under "+ag.getFilePath());
+    	System.out.println("Byte Code file is under "+ag.decompile());
     }
     
     response.sendRedirect("results.jsp");
