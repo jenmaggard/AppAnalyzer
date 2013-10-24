@@ -7,5 +7,5 @@
 public abstract class Decompiler {
 	public abstract String decompile();
 	public abstract void setFilePath(String fp);
-	public abstract String getAppName();
+	public abstract String getFilePath();
 }

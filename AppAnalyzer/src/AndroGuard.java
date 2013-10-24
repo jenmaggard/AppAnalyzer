@@ -1,4 +1,3 @@
-import java.io.File;
 
 /**
  * Decompiler AndroGuard extends abstract class Decompiler
@@ -6,8 +5,14 @@ import java.io.File;
  *
  */
 public class AndroGuard extends Decompiler{
-	public String name;
+	public String appName,plaintName;
 	protected String bytecodeFile;
+	
+	public AndroGuard(String name){
+		this.appName=name;
+		int index=name.indexOf(".");
+		plaintName=name.substring(0, index);
+	}
 	
 	/**
 	 * Decompile the android application to dalvik byte code
@@ -17,29 +22,31 @@ public class AndroGuard extends Decompiler{
 	public String decompile() {
 		// TODO Auto-generated method stub
 		Process p;
-		String apk="apk\\Test.apk";
+		String apk="apk\\"+appName;
 		String directory="F:\\projects\\AppAnalyzer\\AppAnalyzer\\";
 		
 		//Get .xml files
 		String apktool=directory+"decompile\\apktool.bat";
 
 		ProcessBuilder pb=new ProcessBuilder();
-		pb.command(apktool,"d","-f",directory+apk,directory+"apk\\Test");
+		pb.command(apktool,"d","-f",directory+apk,directory+"apk\\"+plaintName);
 		try{
 			p=pb.start();
 			p.waitFor(); // wait for process finishes
+			System.out.println("Get XML files.");
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 		
 		//Get Dalvik Byte Code
-		pb.directory(new File(directory));
-		String androGuard=".\\decompile\\androguard\\cfgAndroFile.py";
-		bytecodeFile=".\\bytecode\\Test.txt";
+		//pb.directory(new File(directory));
+		String androGuard=directory+"decompile\\androguard\\cfgAndroFile.py";
+		bytecodeFile=directory+"bytecode\\"+plaintName+".txt";
 		pb.command("python",androGuard,"-i",apk,"-o",bytecodeFile);
 		try{
 			p=pb.start();
 			p.waitFor(); // wait for process finishes
+			System.out.println("Get Byte Code file.");
 		}catch (Exception e){
 			e.printStackTrace();
 		}
@@ -51,11 +58,11 @@ public class AndroGuard extends Decompiler{
 		// TODO Auto-generated method stub
 		this.bytecodeFile=fp;
 	}
-	
+
 	@Override
-	public String getAppName() {
+	public String getFilePath() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.bytecodeFile;
 	}
-	
+		
 }
