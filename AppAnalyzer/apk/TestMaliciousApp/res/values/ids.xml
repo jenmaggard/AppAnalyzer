@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="textView1">false</item>
+    <item type="id" name="sendText">false</item>
+    <item type="id" name="username">false</item>
+    <item type="id" name="password">false</item>
+    <item type="id" name="menu_settings">false</item>
+</resources>

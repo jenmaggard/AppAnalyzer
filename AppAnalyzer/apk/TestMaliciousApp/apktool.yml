@@ -1,0 +1,13 @@
+version: 1.5.2
+apkFileName: TestMaliciousApp.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '7'
+  targetSdkVersion: '8'
+packageInfo:
+  cur_package: com.test.maliciousactivity
+  orig_package: com.test.maliciousactivity
+compressionType: false
