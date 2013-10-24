@@ -1,4 +1,3 @@
-
 /**
  * Decompiler AndroGuard extends abstract class Decompiler
  * @author Mengfei
@@ -39,10 +38,10 @@ public class AndroGuard extends Decompiler{
 		}
 		
 		//Get Dalvik Byte Code
-		//pb.directory(new File(directory));
-		String androGuard=directory+"decompile\\androguard\\cfgAndroFile.py";
+		String androguard=directory+"decompile\\androguard\\cfgAndroFile.py";
+		String input=directory+apk;
 		bytecodeFile=directory+"bytecode\\"+plaintName+".txt";
-		pb.command("python",androGuard,"-i",apk,"-o",bytecodeFile);
+		pb.command("python",androguard,"-i",input,"-o",bytecodeFile);
 		try{
 			p=pb.start();
 			p.waitFor(); // wait for process finishes
@@ -50,6 +49,7 @@ public class AndroGuard extends Decompiler{
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+		
 		return bytecodeFile;
 	}
 
@@ -58,11 +58,5 @@ public class AndroGuard extends Decompiler{
 		// TODO Auto-generated method stub
 		this.bytecodeFile=fp;
 	}
-
-	@Override
-	public String getFilePath() {
-		// TODO Auto-generated method stub
-		return this.bytecodeFile;
-	}
-		
+	
 }
