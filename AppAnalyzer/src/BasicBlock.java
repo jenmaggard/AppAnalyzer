@@ -62,7 +62,8 @@ public class BasicBlock implements GraphComponent{
 	}
 	
 	public void addNext(String n){
-		next.add(n);
+		if(!n.isEmpty() && n!=null)
+			next.add(n);
 	}
 
 	public void revomeNext(String n){
@@ -74,7 +75,8 @@ public class BasicBlock implements GraphComponent{
 	}
 	
 	public void addPrev(String p){
-		prev.add(p);
+		if(!p.isEmpty() && p!=null)
+			prev.add(p);
 	}
 	
 	public void removePrev(String p){
