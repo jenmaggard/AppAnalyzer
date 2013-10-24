@@ -266,7 +266,7 @@ public class CFGGenerator implements GraphGenerator{
 	public static void main(String[] args){
 		
 		CFGGenerator cfgGen = new CFGGenerator();
-		cfgGen.setFP("C:\\Users\\Faisal\\workspace\\blah\\src\\blah\\TestMalicious.txt");
+		cfgGen.setFP("F:\\projects\\AppAnalyzer\\AppAnalyzer\\bytecode\\TestMaliciousApp.txt");
 		
 		CFG cfg = (CFG) cfgGen.generate();
 	}

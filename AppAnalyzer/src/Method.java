@@ -187,8 +187,9 @@ public class Method implements GraphComponent {
 			postOrderTraversal(child);
 		}
 		
-		//visit root
-		this.BBOrder.add(root);
+		//visit root if not visited
+		if(!this.BBOrder.contains(root))
+			this.BBOrder.add(root);
 	}
 	
 	@Override
